@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Wikinimous</title>
+      <%= stylesheet_link_tag "application" %>
+    </head>
+
+    <body>
+      <%= render "layouts/navbar" %>
+
+      <div class="container">
+        <div>
+          <% @articles.each do |article| %>
+            <h2><%= link_to article.title, article_path(article) %></h2>
+            <p><%= article.content %></p>
+          <% end %>
+        </div>
+      </div>
+    </body>
+
+  </html>
